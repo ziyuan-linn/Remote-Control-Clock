@@ -12,8 +12,8 @@ app.use(express.static('public'));
 
 io.on('connection', (socket) => {
     console.log(socket.id);
-    socket.on("input", (brightness, speed) => {
-        io.emit("output", brightness, speed);
+    socket.on("input", (brightness, speed, bg) => {
+        io.emit("output", brightness, speed, bg);
     })
 })
 

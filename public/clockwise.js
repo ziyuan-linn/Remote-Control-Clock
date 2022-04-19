@@ -5,13 +5,15 @@ socket.on("connect", () => {
     console.log(socket.id);
 })
 
-socket.on("output", (bright, spd) => {
+socket.on("output", (bright, spd, bcg) => {
     brightness = parseInt(bright);
     clockSpeed = parseInt(spd);
+    bg = parseInt(bcg);
 })
 
 let brightness = 0;
 let clockSpeed = 0;
+let bg = 0;
 let sLength;
 let mLength;
 let hLength;
@@ -31,7 +33,7 @@ function draw() {
     translate(width / 2, height / 2);
     rotate(-PI / 2);
     stroke(255, 0, 0, 10); 
-    background(30);
+    background(0, 0, bg);
     blendMode(ADD);
     
 
